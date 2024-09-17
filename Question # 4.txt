@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    float cost, discount, actual_amount, saved_amount, amount_after_discount;
+
+    printf("Enter the cost of items: ");
+    scanf("%f", &cost);
+
+    if (cost < 500) {
+        printf("Minimum eligible amount for a discount is 500.\n");
+    } else if (cost >= 500 && cost < 2000) {
+        discount = 0.05 * cost;
+    } else if (cost >= 2000 && cost < 4000) {
+        discount = 0.10 * cost;
+    } else if (cost >= 4000 && cost < 6000) {
+        discount = 0.20 * cost;
+    } else {
+        discount = 0.35 * cost;
+    }
+
+    actual_amount = cost;
+    saved_amount = discount;
+    amount_after_discount = cost - discount;
+
+    printf("Actual amount: %.2f\n", actual_amount);
+    printf("Saved amount: %.2f\n", saved_amount);
+    printf("Amount after discount: %.2f\n", amount_after_discount);
+
+    return 0;
+}
